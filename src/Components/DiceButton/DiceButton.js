@@ -1,8 +1,8 @@
-import './DiceButton.sass';
+import './DiceButton.scss';
 
 function DiceButton(props) {
     return (
-        <div onClick={props.onClick}>Add <b>D{props.diceNumber}</b></div>
+        <div className="dice-button" onClick={props.onClick}>Add <b>D{props.diceNumber}</b></div>
     )
 }
 

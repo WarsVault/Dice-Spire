@@ -1,0 +1,32 @@
+@import "../../variables";
+
+.dice-button {
+  width: 35%;
+
+  background-color: $color2;
+
+  padding: 20px;
+  border-radius: $border-radius;
+  border: 2.5px solid $color2;
+
+  font-size: 18px;
+  text-align: center;
+
+  transition-duration: 0.1s;
+
+  b {
+    color: $color1;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    border: 5px solid $color3;
+
+    font-size: 20px;
+
+    b {
+      color: $color3;
+    }
+  }
+}

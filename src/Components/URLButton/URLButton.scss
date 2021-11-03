@@ -1,0 +1,117 @@
+@import "../../variables";
+
+.urlbutton-container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .dicebuttons-container {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .resetbutton {
+      font-size: 18px;
+    }
+
+    .resetbutton, .advbutton {
+      height: 35%;
+      width: 7.5%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $color3;
+
+      border-radius: $border-radius;
+      border: 2.5px solid $color3;
+
+      color: $color1;
+      font-weight: bold;
+      text-align: center;
+
+      transition-duration: 0.1s;
+
+      &:hover {
+        cursor: pointer;
+
+        background-color: $color1;
+
+        color: $color3;
+      }
+
+      &:active {
+        background-color: $color4;
+        border: 2.5px solid $color4;
+      }
+    }
+
+    .urlbutton {
+      height: 45%;
+      width: 20%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $color3;
+
+      margin: 0px $spacing;
+
+      border-radius: $border-radius;
+      border: 5px solid $color3;
+
+      color: $color1;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+
+      transition-duration: 0.5s;
+
+      &:hover {
+        cursor: pointer;
+
+        background-color: $color1;
+
+        color: $color3;
+      }
+
+      &:active {
+        background-color: $color4;
+        border: 5px solid $color4;
+      }
+    }
+  }
+
+  .roll-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: $color3;
+    font-size: 26px;
+    font-weight: bold;
+
+    i {
+      opacity: 0.5;
+    }
+
+    .name {
+      margin-right: 5px;
+    }
+
+    .dice {
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.mod-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  > :first-child {
+    margin-right: $spacing;
+  }
+
+  .modbutton {
+    width: 17.5%;
+
+    background-color: $color2;
+
+    padding: 10px 5px;
+    border-radius: $border-radius;
+    border: 2.5px solid $color2;
+
+    font-size: 18px;
+    text-align: center;
+
+    transition-duration: 0.1s;
+
+    b {
+      color: $color1;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      border: 5px solid $color3;
+
+      font-size: 18px;
+
+      b {
+        color: $color3;
+      }
+    }
+  }
+}

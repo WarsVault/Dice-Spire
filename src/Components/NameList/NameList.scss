@@ -1,0 +1,73 @@
+@import "../../variables";
+
+.list-container {
+  height: 90%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  > :not(:first-child):not(:last-child) {
+    margin: 0px 5px;
+  }
+  > :first-child {
+    margin-right: 5px;
+  }
+  > :last-child {
+    margin-left: 5px;
+  }
+
+  .list {
+    width: 100%;
+    height: fit-content;
+
+    background-color: $color2;
+
+    padding: 7.5px 0px;
+    border-radius: $border-radius;
+    border: 2.5px solid $color2;
+
+    text-align: center;
+
+    > :not(:first-child):not(:nth-child(2)):not(:last-child) {
+      margin: 2.5px 0px;
+    }
+    > :nth-child(2) {
+      margin-bottom: 2.5px;
+    }
+    > :last-child {
+      margin-top: 2.5px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+
+      color: $color1;
+
+      margin-bottom: 5px;
+    }
+
+    .name {
+      transition-duration: 0.1s;
+
+      &:hover {
+        cursor: pointer;
+
+        color: $color3;
+
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    &:hover {
+      border: 2.5px solid $color3;
+
+      .title {
+        color: $color3;
+      }
+    }
+  }
+}

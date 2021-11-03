@@ -1,0 +1,50 @@
+[
+    [
+        "Ability Checks",
+        "Strengh Check",
+        "Dexterity Check",
+        "Constitution Check",
+        "Intelligence Check",
+        "Wisdom Check",
+        "Charisma Check"
+    ],
+    [
+        "Saving Throws",
+        "Strengh Saving Throw",
+        "Dexterity Saving Throw",
+        "Constitution Saving Throw",
+        "Intelligence Saving Throw",
+        "Wisdom Saving Throw",
+        "Charisma Saving Throw"
+    ],
+    [
+        "Skill Checks",
+        "Acrobatics Check",
+        "Animal Handling Check",
+        "Arcana Check",
+        "Athletics Check",
+        "Deception Check",
+        "History Check",
+        "Insight Check",
+        "Intimidation Check",
+        "Investigation Check",
+        "Medicine Check",
+        "Nature Check",
+        "Perception Check",
+        "Performance Check",
+        "Persuasion Check",
+        "Religion Check",
+        "Sleight of Hand Check",
+        "Stealth Check",
+        "Survival Check"
+    ],
+    [
+        "Combat",
+        "Attack",
+        "Damage"
+    ],
+    [
+        "Magic",
+        "Fireball"
+    ]
+]
