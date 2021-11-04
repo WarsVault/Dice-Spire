@@ -11,19 +11,16 @@ function URLButton(props) {
         }
     }
 
-    function GetUrl(urlPrefix, urlName, urlDice, processedMod) {
-        return urlPrefix + (urlName === "" ? "" : urlName + ":") + urlDice + ProcessMod(processedMod);
-    }
-
-    function GetAdvUrl(urlPrefix, urlName, urlDice, processedMod) {
-        return urlPrefix + (urlName === "" ? "" : urlName + ":") + urlDice + ProcessMod(processedMod) + "/" + (urlName === "" ? "" : urlName + ":") + urlDice + ProcessMod(processedMod);
+    function GetUrl(adv, urlPrefix, urlName, urlDice, processedMod) {
+        const diceUrl = (urlName === "" ? "" : urlName.replace(" ", "%20") + ":") + (urlDice.includes("D100") ? urlDice.replace("D100", "D100+1D10") : urlDice) + ProcessMod(processedMod);
+        return urlPrefix + diceUrl + (adv ? `/${diceUrl}` : "");
     }
 
     function RollDice(adv) {
         if (!adv) {
-            window.open(GetUrl(props.urlPrefix, props.urlName.replace(" ", "%20"), props.urlDice, props.processedMod), "_self");
+            window.open(GetUrl(false, props.urlPrefix, props.urlName, props.urlDice, props.processedMod), "_self");
         } else {
-            window.open(GetAdvUrl(props.urlPrefix, props.urlName.replace(" ", "%20"), props.urlDice, props.processedMod), "_self");
+            window.open(GetUrl(true, props.urlPrefix, props.urlName, props.urlDice, props.processedMod), "_self");
         }
         props.onReset();
     }

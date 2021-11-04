@@ -17,28 +17,28 @@
 
     background-color: $color2;
 
-    padding: 10px 5px;
+    padding: 7.5px 4px;
     border-radius: $border-radius;
-    border: 2.5px solid $color2;
+    border: 5px solid $color2;
 
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
 
     transition-duration: 0.1s;
 
     b {
-      color: $color1;
+      color: $color3;
     }
 
     &:hover {
       cursor: pointer;
 
+      background-color: $color1;
+
       border: 5px solid $color3;
 
-      font-size: 18px;
-
       b {
-        color: $color3;
+        text-decoration: underline;
       }
     }
   }

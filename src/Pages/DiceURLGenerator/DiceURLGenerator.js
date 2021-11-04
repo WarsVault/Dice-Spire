@@ -1,8 +1,10 @@
 import { useState } from "react";
 import DiceButton from "../../Components/DiceButton/DiceButton.js";
+import Header from "../../Components/Header/Header.js";
 import ModButton from "../../Components/ModButton/ModButton.js";
 import NameInput from "../../Components/NameInput/NameInput.js";
 import NameList from "../../Components/NameList/NameList.js";
+import Title from "../../Components/Title/Title.js";
 import URLButton from "../../Components/URLButton/URLButton.js";
 import "./DiceURLGenerator.scss";
 
@@ -53,29 +55,40 @@ function DiceURLGenerator() {
     return (
         <div className="main-container">
             <div className="generator-container">
-                <div className="dicebutton-container">
-                    <DiceButton diceNumber="4" onClick={() => AddDice("4")} />
-                    <DiceButton diceNumber="6" onClick={() => AddDice("6")} />
-                    <DiceButton diceNumber="8" onClick={() => AddDice("8")} />
-                    <DiceButton diceNumber="10" onClick={() => AddDice("10")} />
-                    <DiceButton diceNumber="12" onClick={() => AddDice("12")} />
-                    <DiceButton diceNumber="20" onClick={() => AddDice("20")} />
-                    <DiceButton diceNumber="100" onClick={() => AddDice("100")} />
+                <div className="generator-sub-container">
+                    <Title title="Dice" />
+                    <div className="dicebutton-container">
+                        <DiceButton diceNumber="4" onClick={() => AddDice("4")} />
+                        <DiceButton diceNumber="6" onClick={() => AddDice("6")} />
+                        <DiceButton diceNumber="8" onClick={() => AddDice("8")} />
+                        <DiceButton diceNumber="10" onClick={() => AddDice("10")} />
+                        <DiceButton diceNumber="12" onClick={() => AddDice("12")} />
+                        <DiceButton diceNumber="20" onClick={() => AddDice("20")} />
+                        <DiceButton diceNumber="100" onClick={() => AddDice("100")} />
+                    </div>
                 </div>
-                <div className="namelist-container">
-                    <NameList onClick={name => AddName(name)} />
-                    <NameInput onChange={event => AddName(event.target.value)} value={urlName} />
+                <div className="generator-sub-container">
+                    <Header />
+                    <Title title="Roll Name" />
+                    <div className="namelist-container">
+                        <NameList onClick={name => AddName(name)} />
+                        <NameInput onChange={event => AddName(event.target.value)} value={urlName} />
+                    </div>
                 </div>
-                <div className="modbutton-container">
-                    <ModButton modNumber="1" onClickAdd={() => AddMod(true, 1)} onClickSub={() => AddMod(false, 1)} />
-                    <ModButton modNumber="2" onClickAdd={() => AddMod(true, 2)} onClickSub={() => AddMod(false, 2)} />
-                    <ModButton modNumber="3" onClickAdd={() => AddMod(true, 3)} onClickSub={() => AddMod(false, 3)} />
-                    <ModButton modNumber="4" onClickAdd={() => AddMod(true, 4)} onClickSub={() => AddMod(false, 4)} />
-                    <ModButton modNumber="5" onClickAdd={() => AddMod(true, 5)} onClickSub={() => AddMod(false, 5)} />
-                    <ModButton modNumber="6" onClickAdd={() => AddMod(true, 6)} onClickSub={() => AddMod(false, 6)} />
-                    <ModButton modNumber="7" onClickAdd={() => AddMod(true, 7)} onClickSub={() => AddMod(false, 7)} />
-                    <ModButton modNumber="8" onClickAdd={() => AddMod(true, 8)} onClickSub={() => AddMod(false, 8)} />
-                    <ModButton modNumber="9" onClickAdd={() => AddMod(true, 9)} onClickSub={() => AddMod(false, 9)} />
+                <div className="generator-sub-container">
+                    <Title title="Modifier" />
+                    <div className="modbutton-container">
+                        <ModButton modNumber="1" onClickAdd={() => AddMod(true, 1)} onClickSub={() => AddMod(false, 1)} />
+                        <ModButton modNumber="2" onClickAdd={() => AddMod(true, 2)} onClickSub={() => AddMod(false, 2)} />
+                        <ModButton modNumber="3" onClickAdd={() => AddMod(true, 3)} onClickSub={() => AddMod(false, 3)} />
+                        <ModButton modNumber="4" onClickAdd={() => AddMod(true, 4)} onClickSub={() => AddMod(false, 4)} />
+                        <ModButton modNumber="5" onClickAdd={() => AddMod(true, 5)} onClickSub={() => AddMod(false, 5)} />
+                        <ModButton modNumber="6" onClickAdd={() => AddMod(true, 6)} onClickSub={() => AddMod(false, 6)} />
+                        <ModButton modNumber="7" onClickAdd={() => AddMod(true, 7)} onClickSub={() => AddMod(false, 7)} />
+                        <ModButton modNumber="8" onClickAdd={() => AddMod(true, 8)} onClickSub={() => AddMod(false, 8)} />
+                        <ModButton modNumber="9" onClickAdd={() => AddMod(true, 9)} onClickSub={() => AddMod(false, 9)} />
+                        <ModButton modNumber="10" onClickAdd={() => AddMod(true, 10)} onClickSub={() => AddMod(false, 10)} />
+                    </div>
                 </div>
             </div>
             <div className="url-container">

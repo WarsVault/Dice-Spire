@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.title-container {
+  height: 7.5%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 28px;
+  font-weight: bold;
+  color: $color3;
+}

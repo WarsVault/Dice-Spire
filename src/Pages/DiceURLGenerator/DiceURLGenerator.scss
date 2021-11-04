@@ -14,31 +14,39 @@
     flex-direction: row;
     justify-content: space-between;
 
-    .dicebutton-container,
-    .modbutton-container {
+    > :first-child,
+    > :last-child {
       width: 20%;
-
-      margin: $spacing 0px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
     }
-    .namelist-container {
+
+    > :not(:first-child):not(:last-child) {
       width: 60%;
+    }
 
-      margin: $spacing 0px;
+    .generator-sub-container {
+      .dicebutton-container,
+      .modbutton-container {
+        height: 92.5%;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .namelist-container {
+        height: 77.5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
   .url-container {
     height: 15%;
-    
+
     margin: $spacing 0px;
 
     display: flex;
