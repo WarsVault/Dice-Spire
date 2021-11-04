@@ -8,20 +8,20 @@
   flex-direction: column;
 
   .faqpagecontent {
-    padding: 0px 50px;
+    padding: 0px 2.5vw;
 
     > :not(:first-child) {
-      margin-top: 25px;
+      margin-top: 1.25vw;
     }
 
     .faq-item {
       .faq-question {
-        font-size: 28px;
+        font-size: 1.45vw;
         font-weight: bold;
         color: $color3;
       }
       .faq-answer {
-        font-size: 22px;
+        font-size: 1.15vw;
       }
     }
   }

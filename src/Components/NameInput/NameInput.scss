@@ -15,18 +15,18 @@
 
     background-color: $color2;
 
-    border: 2.5px solid $color2;
+    border: $border-small solid $color2;
     border-radius: $border-radius;
 
     color: $color4;
     text-align: center;
-    font-size: 22px;
+    font-size: 1.15vw;
     font-weight: bold;
 
     &:focus {
       outline: none;
       color: $color3;
-      border: 2.5px solid $color3;
+      border: $border-small solid $color3;
     }
 
     &::placeholder {

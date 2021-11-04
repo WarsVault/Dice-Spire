@@ -20,13 +20,15 @@
     .logoImg {
       position: absolute;
 
-      width: 100px;
+      width: 5.5vw;
     }
 
     .logoDice {
       position: absolute;
 
-      font-size: 16px;
+      padding-top: 0.25vw;
+      
+      font-size: 0.85vw;
       font-weight: bold;
       color: $color3;
     }
@@ -44,7 +46,7 @@
     justify-content: flex-end;
     align-items: center;
 
-    font-size: 36px;
+    font-size: 1.875vw;
     font-weight: bold;
     color: $color3;
   }
@@ -58,7 +60,7 @@
     align-items: center;
 
     > :not(:last-child) {
-      margin-right: 10px;
+      margin-right: 0.5vw;
     }
 
     .headerbutton {
@@ -74,6 +76,11 @@
 }
 
 .header-page-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
   height: 15%;
 
   display: flex;
@@ -93,13 +100,15 @@
     .logoImg {
       position: absolute;
 
-      width: 100px;
+      width: 5.5vw;
     }
 
     .logoDice {
       position: absolute;
-
-      font-size: 16px;
+      
+      padding-top: 0.25vw;
+      
+      font-size: 0.85vw;
       font-weight: bold;
       color: $color3;
     }
@@ -115,7 +124,7 @@
     display: flex;
     align-items: center;
 
-    font-size: 36px;
+    font-size: 1.875vw;
     font-weight: bold;
     color: $color3;
   }
@@ -127,7 +136,7 @@
     align-items: center;
 
     > :not(:last-child) {
-      margin-right: 10px;
+      margin-right: 0.5vw;
     }
 
     .headerbutton {

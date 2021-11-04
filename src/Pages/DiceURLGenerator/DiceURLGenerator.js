@@ -11,8 +11,6 @@ import "./DiceURLGenerator.scss";
 // Dice example: talespire://dice/Fireball:8d6+5-2
 // DiceURL layout: "talespire://dice/" + "{name}:" + "{dice}" + "{modifier}"
 
-// Deactivate buttons when no roll set and add titles
-
 function DiceURLGenerator() {
     const urlPrefix = "talespire://dice/";
     const [urlName, setUrlName] = useState("");
@@ -76,7 +74,7 @@ function DiceURLGenerator() {
                     </div>
                 </div>
                 <div className="generator-sub-container">
-                    <Title title="Modifier" />
+                    <Title title="Modifiers" />
                     <div className="modbutton-container">
                         <ModButton modNumber="1" active={urlDice !== ""} onClickAdd={() => AddMod(true, 1)} onClickSub={() => AddMod(false, 1)} />
                         <ModButton modNumber="2" active={urlDice !== ""} onClickAdd={() => AddMod(true, 2)} onClickSub={() => AddMod(false, 2)} />

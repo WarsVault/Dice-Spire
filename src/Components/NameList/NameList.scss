@@ -9,13 +9,13 @@
   justify-content: space-between;
 
   > :not(:first-child):not(:last-child) {
-    margin: 0px 5px;
+    margin: 0px 0.25vw;
   }
   > :first-child {
-    margin-right: 5px;
+    margin-right: 0.25vw;
   }
   > :last-child {
-    margin-left: 5px;
+    margin-left: 0.25vw;
   }
 
   .list {
@@ -24,35 +24,35 @@
 
     background-color: $color2;
 
-    padding: 5px 0px 7.5px 0px;
+    padding: 0.25vw 0px 0.375vw 0px;
     border-radius: $border-radius;
-    border: 5px solid $color2;
+    border: $border-large solid $color2;
 
     text-align: center;
 
     > :not(:first-child):not(:nth-child(2)):not(:last-child) {
-      margin: 2.5px 0px;
+      margin: 0.25vw 0px;
     }
     > :nth-child(2) {
-      margin-bottom: 2.5px;
+      margin-bottom: 0.25vw;
     }
     > :last-child {
-      margin-top: 2.5px;
+      margin-top: 0.25vw;
     }
 
     .title {
-      font-size: 18px;
+      font-size: 0.95vw;
       font-weight: bold;
 
       color: $color3;
 
-      margin-bottom: 5px;
+      margin-bottom: 0.25vw;
     }
 
     .name {
       transition-duration: 0.1s;
       
-      font-size: 16px;
+      font-size: 0.85vw;
 
       &:hover {
         cursor: pointer;
@@ -67,7 +67,7 @@
     &:hover {
       background-color: $color1;
 
-      border: 5px solid $color3;
+      border: $border-large solid $color3;
     }
   }
 }

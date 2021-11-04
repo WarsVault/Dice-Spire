@@ -18,7 +18,7 @@
     align-items: center;
 
     .resetbutton {
-      font-size: 18px;
+      font-size: 0.95vw;
     }
 
     .resetbutton-active,
@@ -35,7 +35,7 @@
       background-color: $color2;
 
       border-radius: $border-radius;
-      border: 2.5px solid $color2;
+      border: $border-small solid $color2;
 
       color: $color1;
       font-weight: bold;
@@ -52,7 +52,7 @@
     .advbutton-active {
       background-color: $color3;
 
-      border: 2.5px solid $color3;
+      border: $border-small solid $color3;
 
       &:hover {
         cursor: pointer;
@@ -77,10 +77,10 @@
       margin: 0px $spacing;
 
       border-radius: $border-radius;
-      border: 5px solid $color2;
+      border: $border-large solid $color2;
 
       color: $color1;
-      font-size: 32px;
+      font-size: 1.7vw;
       font-weight: bold;
       text-align: center;
 
@@ -92,7 +92,7 @@
     .urlbutton-active {
       background-color: $color3;
 
-      border: 5px solid $color3;
+      border: $border-large solid $color3;
 
       &:hover {
         cursor: pointer;
@@ -113,7 +113,7 @@
     align-items: center;
 
     color: $color3;
-    font-size: 26px;
+    font-size: 1.35vw;
     font-weight: bold;
 
     i {
@@ -121,7 +121,7 @@
     }
 
     .name {
-      margin-right: 5px;
+      margin-right: 0.25vw;
     }
 
     .dice {

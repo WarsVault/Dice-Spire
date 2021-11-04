@@ -5,11 +5,11 @@
 
   background-color: $color2;
 
-  padding: 17.5px;
+  padding: 0.9vw;
   border-radius: $border-radius;
-  border: 5px solid $color2;
+  border: $border-large solid $color2;
 
-  font-size: 20px;
+  font-size: 1.1vw;
   text-align: center;
 
   transition-duration: 0.1s;
@@ -23,7 +23,7 @@
 
     background-color: $color1;
 
-    border: 5px solid $color3;
+    border: $border-large solid $color3;
 
     b {
       text-decoration: underline;
