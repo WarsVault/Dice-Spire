@@ -72,3 +72,72 @@
     }
   }
 }
+
+.header-page-container {
+  height: 15%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .logo-container {
+    height: 100%;
+    width: 10%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logoImg {
+      position: absolute;
+
+      width: 100px;
+    }
+
+    .logoDice {
+      position: absolute;
+
+      font-size: 16px;
+      font-weight: bold;
+      color: $color3;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .headertitle {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 36px;
+    font-weight: bold;
+    color: $color3;
+  }
+
+  .headerbuttons-container {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    > :not(:last-child) {
+      margin-right: 10px;
+    }
+
+    .headerbutton {
+      &:hover {
+        cursor: pointer;
+
+        color: $color3;
+
+        text-decoration: underline;
+      }
+    }
+  }
+}

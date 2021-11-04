@@ -28,9 +28,9 @@ function URLButton(props) {
     return (
         <div className="urlbutton-container">
             <div className="dicebuttons-container">
-                <div className="resetbutton" onClick={() => props.onReset()}>Reset Roll</div>
-                <div className="urlbutton" onClick={() => RollDice(false)}>Roll on TaleSpire!</div>
-                <div className="advbutton" onClick={() => RollDice(true)}>Roll with Adv/Dis</div>
+                <div className={props.urlDice !== "" ? "resetbutton-active" : "resetbutton-inactive"} onClick={() => (props.urlDice !== "" ? props.onReset() : null)}>Reset Roll</div>
+                <div className={props.urlDice !== "" ? "urlbutton-active" : "urlbutton-inactive"} onClick={() => (props.urlDice !== "" ? RollDice(false) : null)}>Roll on TaleSpire!</div>
+                <div className={props.urlDice !== "" ? "advbutton-active" : "advbutton-inactive"} onClick={() => (props.urlDice !== "" ? RollDice(true) : null)}>Roll with Adv/Dis</div>
             </div>
             <div className="roll-container">
                 <div className="name">{props.urlName === "" ? "Unamed Roll:" : `${props.urlName}:`}</div>

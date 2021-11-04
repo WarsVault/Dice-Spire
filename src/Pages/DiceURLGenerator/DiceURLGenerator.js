@@ -68,7 +68,7 @@ function DiceURLGenerator() {
                     </div>
                 </div>
                 <div className="generator-sub-container">
-                    <Header />
+                    <Header generator={true} />
                     <Title title="Roll Name" />
                     <div className="namelist-container">
                         <NameList onClick={name => AddName(name)} />
@@ -78,16 +78,16 @@ function DiceURLGenerator() {
                 <div className="generator-sub-container">
                     <Title title="Modifier" />
                     <div className="modbutton-container">
-                        <ModButton modNumber="1" onClickAdd={() => AddMod(true, 1)} onClickSub={() => AddMod(false, 1)} />
-                        <ModButton modNumber="2" onClickAdd={() => AddMod(true, 2)} onClickSub={() => AddMod(false, 2)} />
-                        <ModButton modNumber="3" onClickAdd={() => AddMod(true, 3)} onClickSub={() => AddMod(false, 3)} />
-                        <ModButton modNumber="4" onClickAdd={() => AddMod(true, 4)} onClickSub={() => AddMod(false, 4)} />
-                        <ModButton modNumber="5" onClickAdd={() => AddMod(true, 5)} onClickSub={() => AddMod(false, 5)} />
-                        <ModButton modNumber="6" onClickAdd={() => AddMod(true, 6)} onClickSub={() => AddMod(false, 6)} />
-                        <ModButton modNumber="7" onClickAdd={() => AddMod(true, 7)} onClickSub={() => AddMod(false, 7)} />
-                        <ModButton modNumber="8" onClickAdd={() => AddMod(true, 8)} onClickSub={() => AddMod(false, 8)} />
-                        <ModButton modNumber="9" onClickAdd={() => AddMod(true, 9)} onClickSub={() => AddMod(false, 9)} />
-                        <ModButton modNumber="10" onClickAdd={() => AddMod(true, 10)} onClickSub={() => AddMod(false, 10)} />
+                        <ModButton modNumber="1" active={urlDice !== ""} onClickAdd={() => AddMod(true, 1)} onClickSub={() => AddMod(false, 1)} />
+                        <ModButton modNumber="2" active={urlDice !== ""} onClickAdd={() => AddMod(true, 2)} onClickSub={() => AddMod(false, 2)} />
+                        <ModButton modNumber="3" active={urlDice !== ""} onClickAdd={() => AddMod(true, 3)} onClickSub={() => AddMod(false, 3)} />
+                        <ModButton modNumber="4" active={urlDice !== ""} onClickAdd={() => AddMod(true, 4)} onClickSub={() => AddMod(false, 4)} />
+                        <ModButton modNumber="5" active={urlDice !== ""} onClickAdd={() => AddMod(true, 5)} onClickSub={() => AddMod(false, 5)} />
+                        <ModButton modNumber="6" active={urlDice !== ""} onClickAdd={() => AddMod(true, 6)} onClickSub={() => AddMod(false, 6)} />
+                        <ModButton modNumber="7" active={urlDice !== ""} onClickAdd={() => AddMod(true, 7)} onClickSub={() => AddMod(false, 7)} />
+                        <ModButton modNumber="8" active={urlDice !== ""} onClickAdd={() => AddMod(true, 8)} onClickSub={() => AddMod(false, 8)} />
+                        <ModButton modNumber="9" active={urlDice !== ""} onClickAdd={() => AddMod(true, 9)} onClickSub={() => AddMod(false, 9)} />
+                        <ModButton modNumber="10" active={urlDice !== ""} onClickAdd={() => AddMod(true, 10)} onClickSub={() => AddMod(false, 10)} />
                     </div>
                 </div>
             </div>

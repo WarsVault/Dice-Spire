@@ -1,0 +1,24 @@
+{
+    "questionsAndAnswers" : [
+        {
+            "question" : "Why do my modifiers disappear when I go to roll on TaleSpire?",
+            "answer" : "TaleSpire currently accepts a single modifier per dice roll, so Dice Spire shows multiple modifiers in the preview, but sends the roll with the modifiers already compiled into a single number, i.e., +3+7 becomes +10."
+        },
+        {
+            "question" : "I can't find a name that I want for my roll on the quick name list, what do I do?",
+            "answer" : "The roll's name is completely customizable, if you can't find a name you like or want to have your own, just change it in the input box just above the roll button."
+        },
+        {
+            "question" : "The modifier/roll buttons are greyed out for me.",
+            "answer" : "Those buttons will become accessible as soon as you input a die into the roll."
+        },
+        {
+            "question" : "When I try to roll a D100, TaleSpire gives me two D10's instead.",
+            "answer" : "TaleSpire does not have a 100 sided die, so by choosing a D100 in Dice Spire, you'll be given a 10 sided die and a percentage die, which, when paired, represent a D100, in TaleSpire."
+        },
+        {
+            "question" : "My rolls keep disappearing  after I roll them.",
+            "answer" : "The generator resets after each roll, if you wish to roll the same roll again, you can pick up and re-roll the one in TaleSpire, for it remembers the name and modifiers you've given it."
+        }
+    ]
+}

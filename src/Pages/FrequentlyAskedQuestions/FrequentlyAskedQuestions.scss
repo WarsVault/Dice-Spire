@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.faqpage-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .faqpagecontent {
+    padding: 0px 50px;
+
+    > :not(:first-child) {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      .faq-question {
+        font-size: 28px;
+        font-weight: bold;
+        color: $color3;
+      }
+      .faq-answer {
+        font-size: 22px;
+      }
+    }
+  }
+}
