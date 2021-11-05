@@ -5,7 +5,7 @@ function Suggestions() {
     return (
         <div className="suggestions-container">
             <Header generator={false} />
-            <form name="Suggestions" netlify>
+            <form name="Suggestions" data-netlify={true}>
                 <p>
                     <label>Name</label>
                     <input type="text" name="name" required placeholder="Your name goes here" />
