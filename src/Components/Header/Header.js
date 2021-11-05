@@ -11,7 +11,8 @@ function Header(props) {
                 </div>
                 <div className="headerbuttons-container">
                     <div className="headerbutton" onClick={() => window.open("/about", "_self")}>About</div>
-                    <div className="headerbutton" onClick={() => window.open("/faq", "_self")}>F.A.Q</div>
+                    <div className="headerbutton" onClick={() => window.open("/faq", "_self")}>FAQ</div>
+                    <div className="headerbutton" onClick={() => window.open("/suggestions", "_self")}>Suggestions</div>
                 </div>
             </div>
         )
