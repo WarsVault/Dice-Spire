@@ -2,6 +2,7 @@
     "about" : [
         "My name is <b>Jovanny Loesch Berté</b>, also known as <b>War</b>, I'm a game developer from <i>Brazil</i>.",
         "Why did I create this website? Well, at around <i>October 2021</i> I started using <b>TaleSpire</b> as an interactive virtual tabletop/battle map for my online homebrew campaign, but I was deeply and utterly flabbergasted by the fact that you couldn't roll dice with modifiers in the tool, so it became quite a chore for my group to have to <i>Alt+Tab</i> to roll their dice on external tools, every time something happened in combat. When I found out about DiceURLs, I knew there were going to be community tools to solve my problem, but there weren't that many, so I decided to dust off my website making skills and make a tool myself, and thus, <b>Dice Spire</b> was born.",
-        "If you're interested in my other projects, you can check out my <b>Itch.io</b> page by clicking <a href='https://jovannylb.itch.io/' target='_blank'>here</a>!"
+        "If you're interested in my other projects, you can check out my <b>Itch.io</b> page by clicking <a href='https://jovannylb.itch.io/' target='_blank'>here</a>!",
+        "You can also support me by click the little circle on the bottom right and buying me a coffee!"
     ]
 }
