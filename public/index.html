@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- Netlify form -->
-    <form name="suggestions" netlify hidden>
+    <form name="suggestions" netlify netlify-honeypot="bot-field" data-netlify-recaptcha="true" hidden>
       <input
         type="text"
         name="user-name"
