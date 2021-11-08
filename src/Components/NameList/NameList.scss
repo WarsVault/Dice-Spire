@@ -29,15 +29,15 @@
     border: $border-large solid $color2;
 
     text-align: center;
-
+    
     > :not(:first-child):not(:nth-child(2)):not(:last-child) {
-      margin: 0.25vw 0px;
+      padding: 0.125vw 0px;
     }
     > :nth-child(2) {
-      margin-bottom: 0.25vw;
+      padding-bottom: 0.125vw;
     }
     > :last-child {
-      margin-top: 0.25vw;
+      padding-top: 0.125vw;
     }
 
     .title {
