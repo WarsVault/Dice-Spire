@@ -12,9 +12,18 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Dice Spire - DiceURL Generator</title>
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="jovavnnylb" data-description="Support me on Buy me a coffee!" data-message="" data-color="#AF1B3F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
   </head>
   <body>
     <div id="root" style="height: 100%"></div>
+
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+      kofiWidgetOverlay.draw("jovannylb", {
+        type: "floating-chat",
+        "floating-chat.donateButton.text": "Support Me",
+        "floating-chat.donateButton.background-color": "#AF1B3F",
+        "floating-chat.donateButton.text-color": "#0D0A0B"
+      });
+    </script>
   </body>
 </html>
