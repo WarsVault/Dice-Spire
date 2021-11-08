@@ -14,15 +14,41 @@
     <title>Dice Spire - DiceURL Generator</title>
   </head>
   <body>
+    <!-- Netlify form -->
+    <form name="suggestions" netlify hidden>
+      <input
+        type="text"
+        name="user-name"
+        id="name"
+        required
+        placeholder="Your name goes here"
+      />
+      <input
+        type="email"
+        name="user-email"
+        id="email"
+        required
+        placeholder="Your email goes here"
+      />
+      <select name="user-topic" id="topic">
+        <option value="general-suggestion">General suggestion</option>
+        <option value="namelist-suggestion">Name list suggestion</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="user-message" id="message" required></textarea>
+    </form>
+
+    <!-- Main Page -->
     <div id="root" style="height: 100%"></div>
 
+    <!-- Ko-fi Widget -->
     <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
     <script>
       kofiWidgetOverlay.draw("jovannylb", {
         type: "floating-chat",
         "floating-chat.donateButton.text": "Support Me",
         "floating-chat.donateButton.background-color": "#AF1B3F",
-        "floating-chat.donateButton.text-color": "#0D0A0B"
+        "floating-chat.donateButton.text-color": "#0D0A0B",
       });
     </script>
   </body>

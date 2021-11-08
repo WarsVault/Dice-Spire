@@ -5,34 +5,36 @@ function Suggestions() {
     return (
         <div className="suggestions-container">
             <Header generator={false} />
-            <form name="Suggestions" data-netlify="true">
-                <p>
-                    <label>Name</label>
-                    <input type="text" name="name" required placeholder="Your name goes here" />
-                </p>
-                <br/>
+            <form name="suggestions" method="post">
+                <input type="hidden" name="form-name" value="suggestions" />
 
                 <p>
-                    <label>Email</label>
-                    <input type="email" name="email" required placeholder="Your email goes here" />
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name="user-name" id="name" required placeholder="Your name goes here" />
                 </p>
-                <br/>
+                <br />
 
                 <p>
-                    <label>Topic</label>
-                    <select name="topic">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="user-email" id="email" required placeholder="Your email goes here" />
+                </p>
+                <br />
+
+                <p>
+                    <label htmlFor="topic">Topic</label>
+                    <select name="user-topic" id="topic">
                         <option value="general-suggestion">General suggestion</option>
                         <option value="namelist-suggestion">Name list suggestion</option>
                         <option value="other">Other</option>
                     </select>
                 </p>
-                <br/>
+                <br />
 
                 <p>
-                    <label>Suggestion</label>
-                    <textarea name="message" required></textarea>
+                    <label htmlFor="message">Suggestion</label>
+                    <textarea name="user-message" id="message" required></textarea>
                 </p>
-                <br/>
+                <br />
 
                 <p>
                     <button type="submit">Submit</button>
