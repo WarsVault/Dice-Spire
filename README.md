@@ -10,4 +10,6 @@ On there, you can simply input a die, or dice, and click on *"Roll on TaleSpire!
 
 ## Supporting
 
-You can support by [buying me a coffee](https://www.buymeacoffee.com/jovavnnylb).
+You can support by buying me a coffee bellow.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N16WSHZ)
