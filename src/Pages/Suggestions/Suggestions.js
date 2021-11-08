@@ -5,8 +5,8 @@ function Suggestions() {
     return (
         <div className="suggestions-container">
             <Header generator={false} />
-            <form name="suggestions" method="post">
-                <input type="hidden" name="form-name" value="suggestions" />
+            <form name="Suggestions" method="post">
+                <input type="hidden" name="form-name" value="Suggestions" />
 
                 <p>
                     <label htmlFor="name">Name</label>
