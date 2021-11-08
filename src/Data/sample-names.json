@@ -40,11 +40,36 @@
     ],
     [
         "Combat",
-        "Attack",
-        "Damage"
+		"Initiative",
+        "Melee Attack",
+        "Ranged Attack",
+        "Melee Spell Attack",
+        "Ranged Spell Attack",
+        "Damage",
+        "Spell Damage"
     ],
     [
-        "Magic",
-        "Fireball"
+        "Spells",
+        "Acid Splash",
+        "Aganazzar's Scorcher",
+        "Burning hands",
+        "Catapult",
+        "Chill Touch",
+        "Create Bonfire",
+        "Cure Wounds",
+        "Eldritch Blast",
+        "Fire Bolt",
+        "Fireball",
+        "Guiding Bolt",
+        "Healing word",
+        "Hellish Rebuke",
+        "Magic Missile",
+        "Ray of Frost",
+        "Sacred Flame",
+        "Shocking Grasp",
+        "Sleep",
+        "Thunderwave",
+        "Vicious Mockery",
+        "Witch Bolt"
     ]
 ]
