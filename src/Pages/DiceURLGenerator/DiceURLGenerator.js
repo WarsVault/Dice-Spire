@@ -4,6 +4,7 @@ import Header from "../../Components/Header/Header.js";
 import ModButton from "../../Components/ModButton/ModButton.js";
 import NameInput from "../../Components/NameInput/NameInput.js";
 import NameList from "../../Components/NameList/NameList.js";
+import SavedRolls from "../../Components/SavedRolls/SavedRolls.js";
 import Title from "../../Components/Title/Title.js";
 import URLButton from "../../Components/URLButton/URLButton.js";
 import "./DiceURLGenerator.scss";
@@ -17,6 +18,8 @@ function DiceURLGenerator() {
     const [urlDice, setUrlDice] = useState("");
     const [urlMod, setUrlMod] = useState("");
     const [processedMod, setProcessedMod] = useState(0);
+
+    const [savedRollsWindow, setSavedRollsWindow] = useState(false);
 
     function AddDice(diceNumber) {
         var newUrlDice = urlDice;
@@ -50,8 +53,13 @@ function DiceURLGenerator() {
         setProcessedMod(0);
     }
 
+    function CheckRoll() {
+        return urlName !== "" && urlDice !== "";
+    }
+
     return (
         <div className="main-container">
+            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} />
             <div className="generator-container">
                 <div className="generator-sub-container">
                     <Title title="Dice" />
@@ -90,7 +98,7 @@ function DiceURLGenerator() {
                 </div>
             </div>
             <div className="url-container">
-                <URLButton onReset={ResetRoll} urlPrefix={urlPrefix} urlName={urlName} urlDice={urlDice} urlMod={urlMod} processedMod={processedMod !== 0 ? processedMod : ""} />
+                <URLButton onReset={ResetRoll} savedOnClick={() => setSavedRollsWindow(!savedRollsWindow)} urlPrefix={urlPrefix} urlName={urlName} urlDice={urlDice} urlMod={urlMod} processedMod={processedMod !== 0 ? processedMod : ""} />
             </div>
         </div>
     )

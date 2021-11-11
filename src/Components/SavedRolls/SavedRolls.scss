@@ -1,0 +1,106 @@
+@import "../../variables";
+
+.savedrolls-container {
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  pointer-events: none;
+
+  .saverolls-subcontainer {
+    position: relative;
+    z-index: 1;
+
+    height: 72.5%;
+    width: 82.5%;
+
+    top: 0%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: all;
+
+    background-color: $color1;
+
+    border: solid $color3;
+    border-width: 0px $border-large $border-large;
+    border-radius: 0px 0px $border-radius $border-radius;
+
+    transition-duration: 1s;
+
+    padding: calc($spacing * 3);
+    padding-bottom: $spacing;
+
+    .rolllist {
+      height: 85%;
+      width: 100%;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .rollbuttons {
+      height: 15%;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      .saverollbutton {
+        height: 50%;
+        width: 15%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $color3;
+
+        border-radius: $border-radius;
+        border: $border-small solid $color3;
+
+        color: $color1;
+        font-weight: bold;
+        font-size: calc($font-size * 1.5);
+        text-align: center;
+
+        transition-duration: 0.25s;
+
+        &:hover {
+          cursor: pointer;
+
+          background-color: $color1;
+
+          color: $color3;
+        }
+      }
+
+      .saverollbutton-disabled {
+        background-color: $color2;
+
+        border: $border-small solid $color2;
+
+        &:hover {
+          cursor: not-allowed;
+
+          background-color: $color2;
+
+          color: $color1;
+        }
+      }
+    }
+  }
+
+  .saverolls-subcontainer-retracted {
+    top: -100%;
+  }
+}
