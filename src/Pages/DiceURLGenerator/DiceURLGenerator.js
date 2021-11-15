@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DiceButton from "../../Components/DiceButton/DiceButton.js";
 import Header from "../../Components/Header/Header.js";
 import ModButton from "../../Components/ModButton/ModButton.js";
@@ -20,6 +20,7 @@ function DiceURLGenerator() {
     const [processedMod, setProcessedMod] = useState(0);
 
     const [savedRollsWindow, setSavedRollsWindow] = useState(false);
+    const [savedRolls, setSavedRolls] = useState(localStorage.getItem("savedRolls") ? JSON.parse(localStorage.getItem("savedRolls")) : []);
 
     function AddDice(diceNumber) {
         var newUrlDice = urlDice;
@@ -54,12 +55,29 @@ function DiceURLGenerator() {
     }
 
     function CheckRoll() {
-        return urlName !== "" && urlDice !== "";
+        return urlName !== "" && urlDice !== "" && savedRolls.length < 20;
     }
+
+    function SaveRoll() {
+        const newRoll = {
+            "rollId": savedRolls.length,
+            "rollName": urlName,
+            "rollDice": urlDice,
+            "rollMod": urlMod
+        }
+
+        setSavedRolls(oldSavedRolls => [...oldSavedRolls, newRoll]);
+
+        ResetRoll();
+    }
+
+    useEffect(() => {
+        localStorage.setItem("savedRolls", JSON.stringify(savedRolls));
+    });
 
     return (
         <div className="main-container">
-            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} />
+            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} onSaveRoll={SaveRoll} savedRollList={savedRolls} />
             <div className="generator-container">
                 <div className="generator-sub-container">
                     <Title title="Dice" />

@@ -43,8 +43,24 @@
       width: 100%;
 
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .rolllist-row {
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+
+        .hiddenrollbutton {
+          height: 75%;
+          width: 17.5%;
+
+          border: $border-large solid transparent;
+        }
+      }
     }
 
     .rollbuttons {
