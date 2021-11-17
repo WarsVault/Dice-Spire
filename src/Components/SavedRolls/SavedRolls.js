@@ -9,7 +9,7 @@ function SavedRolls(props) {
             const currentRoll = savedRollList[i];
 
             savedRollsArray.push(
-                <RollButton key={currentRoll.rollId} rollName={currentRoll.rollName} rollDice={currentRoll.rollDice} rollMod={currentRoll.rollMod} onClickRollButton={() => props.onClickRollButton(currentRoll.rollId)} onClickRemoveRoll={() => props.onClickRemoveRoll(currentRoll.rollId)} />
+                <RollButton key={currentRoll.rollId} rollName={currentRoll.rollName} rollDice={currentRoll.rollDice} rollMod={currentRoll.rollMod} onClickRollButton={() => props.onClickRollButton(currentRoll.rollId, false)} onClickRollButtonAdv={() => props.onClickRollButton(currentRoll.rollId, true)} onClickRemoveRoll={() => props.onClickRemoveRoll(currentRoll.rollId)} />
             );
         }
 
@@ -35,11 +35,15 @@ function SavedRolls(props) {
     return (
         <div className="savedrolls-container">
             <div className={"saverolls-subcontainer " + (props.isActive ? "" : "saverolls-subcontainer-retracted")}>
-                <div className="rolllist">
-                    {RenderSaveRolls(props.savedRollList)}
-                </div>
+                {props.savedRollList.length > 0 ?
+                    <div className="rolllist">
+                        {RenderSaveRolls(props.savedRollList)}
+                    </div>
+                    :
+                    <div className="emptymessage">You have no saved rolls</div>
+                }
                 <div className="rollbuttons">
-                    <div className={"saverollbutton " + (props.canSave ? "" : "saverollbutton-disabled")} onClick={props.onSaveRoll}>
+                    <div className={"saverollbutton " + (props.canSave ? "" : "saverollbutton-disabled")} onClick={props.canSave ? props.onSaveRoll : null}>
                         Save Current Roll
                     </div>
                 </div>

@@ -32,21 +32,31 @@
     .rollbutton-remove {
       right: 0;
       bottom: 0;
-  
+
+      border-radius: $border-radius 0px $border-radius 0px;
+    }
+
+    .rollbutton-adv {
+      left: 0;
+      bottom: 0;
+
+      border-radius: 0px $border-radius 0px $border-radius;
+    }
+
+    .rollbutton-remove,
+    .rollbutton-adv {
       height: 25%;
       width: 12.5%;
-  
+
       display: flex;
       justify-content: center;
       align-items: center;
-  
+
       background-color: $color1;
-  
-      border-radius: $border-radius 0px $border-radius 0px;
+
       border: $border-large solid $color1;
 
       color: $color3;
-      font-size: 0.5vw;
 
       transition-duration: 0.25s;
 
@@ -68,11 +78,23 @@
   }
 
   .rollbutton-remove {
+    border-radius: $border-radius 0px $border-radius 0px;
+
+    font-size: 0.75vw;
+  }
+
+  .rollbutton-adv {
+    border-radius: 0px $border-radius 0px $border-radius;
+
+    font-size: 0.5vw;
+  }
+
+  .rollbutton-remove,
+  .rollbutton-adv {
     position: absolute;
 
     background-color: transparent;
 
-    border-radius: $border-radius 0px $border-radius 0px;
     border: $border-large solid transparent;
 
     color: transparent;

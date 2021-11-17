@@ -1,6 +1,7 @@
+import { forwardRef, useImperativeHandle } from 'react';
 import './URLButton.scss';
 
-function URLButton(props) {
+const URLButton = forwardRef((props, ref) => {
     function ProcessMod(processedMod) {
         if (processedMod === "") {
             return "";
@@ -15,6 +16,12 @@ function URLButton(props) {
         const diceUrl = (urlName === "" ? "" : urlName.replace(" ", "%20") + ":") + (urlDice.includes("D100") ? urlDice.replace("D100", "D100+1D10") : urlDice) + ProcessMod(processedMod);
         return urlPrefix + diceUrl + (adv ? `/${diceUrl}` : "");
     }
+
+    useImperativeHandle(ref, () => ({
+        RollDiceRef(adv){
+            RollDice(adv);
+        }
+    }))
 
     function RollDice(adv) {
         if (!adv) {
@@ -40,6 +47,6 @@ function URLButton(props) {
             </div>
         </div>
     )
-}
+})
 
 export default URLButton;

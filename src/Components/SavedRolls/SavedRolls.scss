@@ -63,6 +63,19 @@
       }
     }
 
+    .emptymessage {
+      height: 85%;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: $color2;
+      font-weight: bold;
+      font-size: calc($font-size * 6);
+    }
+
     .rollbuttons {
       height: 15%;
       width: 100%;

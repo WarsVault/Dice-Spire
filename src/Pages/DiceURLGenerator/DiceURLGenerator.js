@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DiceButton from "../../Components/DiceButton/DiceButton.js";
 import Header from "../../Components/Header/Header.js";
 import ModButton from "../../Components/ModButton/ModButton.js";
@@ -21,6 +21,7 @@ function DiceURLGenerator() {
 
     const [savedRollsWindow, setSavedRollsWindow] = useState(false);
     const [savedRolls, setSavedRolls] = useState(localStorage.getItem("savedRolls") ? JSON.parse(localStorage.getItem("savedRolls")) : []);
+    const [rollingSaved, setRollingSaved] = useState(null);
 
     function AddDice(diceNumber) {
         var newUrlDice = urlDice;
@@ -63,7 +64,8 @@ function DiceURLGenerator() {
             "rollId": savedRolls.length,
             "rollName": urlName,
             "rollDice": urlDice,
-            "rollMod": urlMod
+            "rollMod": urlMod,
+            "processedMod": processedMod
         }
 
         setSavedRolls(oldSavedRolls => [...oldSavedRolls, newRoll]);
@@ -75,12 +77,24 @@ function DiceURLGenerator() {
         localStorage.setItem("savedRolls", JSON.stringify(savedRolls));
     }, [savedRolls]);
 
-    function SavedRollToRoll(index) {
+    const URLButtonRef = useRef();
+
+    function RollSavedRoll(index, adv) {
         ResetRoll();
         setUrlName(savedRolls[index].rollName);
         setUrlDice(savedRolls[index].rollDice);
         setUrlMod(savedRolls[index].rollMod);
+        setProcessedMod(savedRolls[index].processedMod);
+
+        setRollingSaved(adv);
     }
+
+    useEffect(() => {
+        if (rollingSaved !== null) {
+            URLButtonRef.current.RollDiceRef(rollingSaved);
+            setRollingSaved(null);
+        }
+    }, [rollingSaved])
 
     function RemoveSavedRoll(index) {
         var newSavedRolls = [...savedRolls];
@@ -96,7 +110,7 @@ function DiceURLGenerator() {
 
     return (
         <div className="main-container">
-            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} onSaveRoll={SaveRoll} savedRollList={savedRolls} onClickRollButton={SavedRollToRoll} onClickRemoveRoll={RemoveSavedRoll} />
+            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} onSaveRoll={SaveRoll} savedRollList={savedRolls} onClickRollButton={RollSavedRoll} onClickRemoveRoll={RemoveSavedRoll} />
             <div className="generator-container">
                 <div className="generator-sub-container">
                     <Title title="Dice" />
@@ -135,7 +149,7 @@ function DiceURLGenerator() {
                 </div>
             </div>
             <div className="url-container">
-                <URLButton onReset={ResetRoll} savedOnClick={() => setSavedRollsWindow(!savedRollsWindow)} urlPrefix={urlPrefix} urlName={urlName} urlDice={urlDice} urlMod={urlMod} processedMod={processedMod !== 0 ? processedMod : ""} />
+                <URLButton ref={URLButtonRef} onReset={ResetRoll} savedOnClick={() => setSavedRollsWindow(!savedRollsWindow)} urlPrefix={urlPrefix} urlName={urlName} urlDice={urlDice} urlMod={urlMod} processedMod={processedMod !== 0 ? processedMod : ""} />
             </div>
         </div>
     )
