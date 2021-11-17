@@ -73,11 +73,30 @@ function DiceURLGenerator() {
 
     useEffect(() => {
         localStorage.setItem("savedRolls", JSON.stringify(savedRolls));
-    });
+    }, [savedRolls]);
+
+    function SavedRollToRoll(index) {
+        ResetRoll();
+        setUrlName(savedRolls[index].rollName);
+        setUrlDice(savedRolls[index].rollDice);
+        setUrlMod(savedRolls[index].rollMod);
+    }
+
+    function RemoveSavedRoll(index) {
+        var newSavedRolls = [...savedRolls];
+        newSavedRolls.splice(index, 1);
+        newSavedRolls.forEach(currentRollButton => {
+            if (currentRollButton.rollId > index) {
+                currentRollButton.rollId -= 1;
+            }
+        });
+
+        setSavedRolls(newSavedRolls);
+    }
 
     return (
         <div className="main-container">
-            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} onSaveRoll={SaveRoll} savedRollList={savedRolls} />
+            <SavedRolls isActive={savedRollsWindow} canSave={CheckRoll()} onSaveRoll={SaveRoll} savedRollList={savedRolls} onClickRollButton={SavedRollToRoll} onClickRemoveRoll={RemoveSavedRoll} />
             <div className="generator-container">
                 <div className="generator-sub-container">
                     <Title title="Dice" />

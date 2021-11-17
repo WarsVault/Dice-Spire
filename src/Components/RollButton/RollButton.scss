@@ -1,6 +1,8 @@
 @import "../../variables";
 
 .rollbutton-container {
+  position: relative;
+
   height: 75%;
   width: 17.5%;
 
@@ -26,13 +28,53 @@
     background-color: $color3;
 
     color: $color1;
+
+    .rollbutton-remove {
+      right: 0;
+      bottom: 0;
+  
+      height: 25%;
+      width: 12.5%;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      background-color: $color1;
+  
+      border-radius: $border-radius 0px $border-radius 0px;
+      border: $border-large solid $color1;
+
+      color: $color3;
+      font-size: 0.5vw;
+
+      transition-duration: 0.25s;
+
+      &:hover {
+        background-color: $color3;
+
+        color: $color1;
+      }
+    }
   }
 
   .rollbutton-name {
     font-size: 1.25vw;
     margin-bottom: 0.25vw;
   }
+
   .rollbutton-props {
     font-size: 1vw;
+  }
+
+  .rollbutton-remove {
+    position: absolute;
+
+    background-color: transparent;
+
+    border-radius: $border-radius 0px $border-radius 0px;
+    border: $border-large solid transparent;
+
+    color: transparent;
   }
 }

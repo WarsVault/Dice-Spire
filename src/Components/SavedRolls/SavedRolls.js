@@ -9,7 +9,7 @@ function SavedRolls(props) {
             const currentRoll = savedRollList[i];
 
             savedRollsArray.push(
-                <RollButton key={currentRoll.rollId} rollName={currentRoll.rollName} rollDice={currentRoll.rollDice} rollMod={currentRoll.rollMod} />
+                <RollButton key={currentRoll.rollId} rollName={currentRoll.rollName} rollDice={currentRoll.rollDice} rollMod={currentRoll.rollMod} onClickRollButton={() => props.onClickRollButton(currentRoll.rollId)} onClickRemoveRoll={() => props.onClickRemoveRoll(currentRoll.rollId)} />
             );
         }
 
