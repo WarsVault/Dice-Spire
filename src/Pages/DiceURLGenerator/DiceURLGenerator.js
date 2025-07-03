@@ -16,6 +16,7 @@ function DiceURLGenerator() {
     const urlPrefix = "talespire://dice/";
     const [urlName, setUrlName] = useState("");
     const [urlDice, setUrlDice] = useState("");
+    const [dieList, setDieList] = useState([]);
     const [urlMod, setUrlMod] = useState("");
     const [processedMod, setProcessedMod] = useState(0);
 
@@ -23,20 +24,31 @@ function DiceURLGenerator() {
     const [savedRolls, setSavedRolls] = useState(localStorage.getItem("savedRolls") ? JSON.parse(localStorage.getItem("savedRolls")) : []);
     const [rollingSaved, setRollingSaved] = useState(null);
 
+    function Die(dieType) {
+      this.amount = 1;
+      this.dieType = dieType;
+    }
+    
     function AddDice(diceNumber) {
-        var newUrlDice = urlDice;
-        const urlDiceSpaced = urlDice.split("+").join(" +") + " ";
-        if (urlDice === "") {
-            newUrlDice = urlDiceSpaced + `1D${diceNumber} `;
-        } else if (!urlDiceSpaced.includes(`D${diceNumber} `)) {
-            newUrlDice = urlDiceSpaced + `+1D${diceNumber} `;
+        // Adds a new die to the list, if it's already there, then it will just increase it's amount
+        const dieType = `D${diceNumber}`;
+        let newDieList = dieList;
+        
+        const dieIndex = newDieList.findIndex(die => die.dieType === dieType);
+        if (dieIndex === -1){
+            newDieList.push(new Die(dieType));
         } else {
-            const slicedurlDiceSpaced = urlDiceSpaced.slice(urlDiceSpaced.search(`D${diceNumber} `) - 1, urlDiceSpaced.search(`D${diceNumber} `) + `D${diceNumber} `.length);
-            const spliturlDiceSpaced = urlDiceSpaced.split(slicedurlDiceSpaced);
-            const addedNumberDice = Number(slicedurlDiceSpaced.slice(0, 1)) + 1;
-            newUrlDice = spliturlDiceSpaced[0] + addedNumberDice + slicedurlDiceSpaced.slice(1, slicedurlDiceSpaced.length) + spliturlDiceSpaced[1];
+            newDieList[dieIndex].amount += 1;
         }
-        setUrlDice(newUrlDice.split(" ").join(""));
+        
+        setDieList(newDieList);
+
+        // Creates the UrlDice by adding each Die object with a + at the end but removing the very last one
+        let newUrlDice = "";
+        newDieList.forEach(die => {
+            newUrlDice += `${die.amount}${die.dieType}+`;
+        });
+        setUrlDice(newUrlDice.slice(0, -1));
     }
 
     function AddName(diceName) {
@@ -51,6 +63,7 @@ function DiceURLGenerator() {
     function ResetRoll() {
         setUrlName("");
         setUrlDice("");
+        setDieList([]);
         setUrlMod("");
         setProcessedMod(0);
     }
